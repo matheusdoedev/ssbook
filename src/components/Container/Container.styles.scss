@@ -1,0 +1,23 @@
+@import '../../styles/settings/breakpoints';
+
+.container {
+  width: 100%;
+  padding: 0 10px;
+  margin: 0 auto;
+
+  @media (min-width: $sm) {
+    padding: 0 16px;
+  }
+
+  @media (min-width: $lg) {
+    max-width: 767px;
+  }
+
+  @media (min-width: $xl) {
+    max-width: 960px;
+  }
+
+  @media (min-width: $xxl) {
+    max-width: 1080px;
+  }
+}
