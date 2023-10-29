@@ -1,9 +1,18 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Container, SeeAllButton } from '@/components'
-import { ssbooksService } from '@/services'
+import { Author, Book } from '@/interfaces'
 
 import './Home.styles.scss'
+
+interface HomeScreenProps {
+  data: {
+    favoriteBooks: Book[]
+    libraryBooks: Book[]
+    favoriteAuthors: Author[]
+  }
+}
 
 const TAB_MENU_OPTIONS = [
   { label: 'Meus livros', isActive: true },
@@ -17,13 +26,8 @@ const LIBRARY_TAB_MENU_OPTIONS = [
   { label: 'Comédia' }
 ]
 
-export default async function HomeScreen() {
-  const { data: getFavoriteBooksData } = await ssbooksService.getFavoriteBooks()
-
-  const { data: getFavoriteAuthorsData } =
-    await ssbooksService.getFavoriteAuthors()
-
-  const { data: getLibraryBooksData } = await ssbooksService.getLibraryBooks()
+export default async function HomeScreen({ data }: HomeScreenProps) {
+  const { favoriteAuthors, favoriteBooks, libraryBooks } = data
 
   const handleTabMenuOptions = () =>
     TAB_MENU_OPTIONS.map(({ label, isActive }) => (
@@ -46,49 +50,51 @@ export default async function HomeScreen() {
     ))
 
   const handleFavoriteBooks = () =>
-    getFavoriteBooksData.favoriteBooks
+    favoriteBooks
       .filter((_, index) => index < 6)
       .map(({ id, name, author, cover }) => (
-        <li key={id} className="favorite-books__list__item">
-          <Image
-            src={cover}
-            alt={name}
-            width={136}
-            height={198}
-            className="favorite-books__list__item__cover"
-          />
-          <h3 className="favorite-books__list__item__title">{name}</h3>
-          <span className="favorite-books__list__item__author">
-            {author.name}
-          </span>
+        <li key={id}>
+          <Link
+            href={`/book-details/${id}`}
+            className="favorite-books__list__button">
+            <Image
+              src={cover}
+              alt={name}
+              width={136}
+              height={198}
+              className="favorite-books__list__item__cover"
+            />
+            <h3 className="favorite-books__list__item__title">{name}</h3>
+            <span className="favorite-books__list__item__author">
+              {author.name}
+            </span>
+          </Link>
         </li>
       ))
 
   const handleFavoriteAuthors = () =>
-    getFavoriteAuthorsData.favoriteAuthors.map(
-      ({ id, name, booksCount, picture }) => (
-        <li key={id} className="favorite-artists__list__item">
-          <Image
-            className="favorite-artists__list__item__picture"
-            src={picture}
-            alt={name}
-            width={68}
-            height={68}
-          />
-          <section className="favorite-artists__list__item__author-info">
-            <h3 className="favorite-artists__list__item__author-info__title">
-              {name}
-            </h3>
-            <span className="favorite-artists__list__item__author-info__books-count">
-              {booksCount} livros
-            </span>
-          </section>
-        </li>
-      )
-    )
+    favoriteAuthors.map(({ id, name, booksCount, picture }) => (
+      <li key={id} className="favorite-artists__list__item">
+        <Image
+          className="favorite-artists__list__item__picture"
+          src={picture}
+          alt={name}
+          width={68}
+          height={68}
+        />
+        <section className="favorite-artists__list__item__author-info">
+          <h3 className="favorite-artists__list__item__author-info__title">
+            {name}
+          </h3>
+          <span className="favorite-artists__list__item__author-info__books-count">
+            {booksCount} livros
+          </span>
+        </section>
+      </li>
+    ))
 
   const handleLibraryBooks = () =>
-    getLibraryBooksData.allBooks
+    libraryBooks
       .filter((_, index) => index < 9)
       .map(({ id, name, author, cover }) => (
         <article key={id} className="library-books__book">

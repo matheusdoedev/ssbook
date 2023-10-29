@@ -1,0 +1,97 @@
+@import '../../styles/settings/breakpoints';
+@import '../../styles/settings/colors';
+
+.book-details {
+  padding-top: 24px;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.book-details__shape {
+  position: absolute;
+  z-index: -1;
+  top: 160px;
+  right: 0;
+  width: 89.07%;
+  height: 90%;
+  border-radius: 32px 0px 0px 0px;
+  background: $secondary-color;
+  box-shadow: 0px 0px 8px 0px #0000001a;
+
+  @media (max-width: $xl) {
+    top: 200px;
+  }
+
+  @media (max-width: $lg) {
+    width: 1140px;
+    box-shadow: 0px 1px 1px 0px #0000000d;
+  }
+}
+
+.book-details__container {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 24px;
+
+  @media (max-width: $xl) {
+    grid-template-columns: 5fr 7fr;
+  }
+}
+
+.book-details__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 24px;
+}
+
+.book-details__aside__cover {
+  border-radius: 10px;
+  object-position: center center;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.book-details__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.book-details__content__title {
+  font-size: 34px;
+  line-height: 40px;
+  color: $gray-300;
+  margin-bottom: 12px;
+}
+
+.book-details__content__author {
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 48px;
+  color: $gray-400;
+}
+
+.book-details__content__abstract {
+  font-size: 18px;
+  line-height: 23px;
+  color: $gray-300;
+  max-width: 100% !important;
+  margin-bottom: 40px;
+}
+
+.book-details__content__about-author__title {
+  font-size: 28px;
+  line-height: 33px;
+  color: $gray-300;
+  margin-bottom: 24px;
+}
+
+.book-details__content__about-author__text {
+  font-size: 18px;
+  line-height: 23px;
+  color: $gray-300;
+  max-width: 100% !important;
+}

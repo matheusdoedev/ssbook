@@ -1,6 +1,7 @@
 export { default as Container } from './Container'
 export { default as Footer } from './Footer'
 export { default as Header } from './Header'
+export { default as LinkWithIcon } from './LinkWithIcon'
 export { default as Logo } from './Logo'
 export { default as SeeAllButton } from './SeeAllButton'
 export { default as TextField } from './TextField'

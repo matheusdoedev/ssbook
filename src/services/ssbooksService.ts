@@ -1,5 +1,6 @@
 import {
   ApolloResponse,
+  GetBookDetailsDto,
   GetFavoriteBooksDto,
   GetFavoriteAuthorsDto,
   GetUserPictureDto,
@@ -30,6 +31,12 @@ export const ssbooksService = {
   getLibraryBooks(): ApolloResponse<GetLibraryBooksDto> {
     return fetchProvider.query({
       query: ssbookQueries.getLibraryBooks
+    })
+  },
+
+  getBookDetails(bookId: string): ApolloResponse<GetBookDetailsDto> {
+    return fetchProvider.query({
+      query: ssbookQueries.getBookDetailsById(bookId)
     })
   }
 }

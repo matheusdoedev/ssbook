@@ -1,3 +1,5 @@
+import { Author, Book } from '.'
+
 export interface GetUserPictureDto {
   userPicture: string
 }
@@ -14,16 +16,6 @@ export interface GetLibraryBooksDto {
   allBooks: Book[]
 }
 
-export interface Book {
-  id: string
-  name: string
-  author: Author
-  cover: string
-}
-
-export interface Author {
-  id: string
-  name: string
-  booksCount: number
-  picture: string
+export interface GetBookDetailsDto {
+  book: Book
 }

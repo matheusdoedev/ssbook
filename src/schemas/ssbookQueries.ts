@@ -42,5 +42,18 @@ export const ssbookQueries = {
         }
       }
     }
+  `,
+
+  getBookDetailsById: (bookId: string) => gql`
+    query ($id: ID = ${bookId}) {
+      book(id: $id) {
+        name
+        cover
+        author {
+          name
+        }
+        description
+      }
+    }
   `
 }

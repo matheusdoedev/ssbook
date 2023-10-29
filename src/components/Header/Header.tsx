@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Container, Logo, TextField } from '@/components'
+import { Container, LinkWithIcon, Logo, TextField } from '@/components'
 import { ssbooksService } from '@/services'
 
 import './Header.styles.scss'
@@ -14,24 +14,18 @@ export default async function Header() {
       <Container className="header__container">
         <Logo />
         <TextField name="search" placeholder="Busque um livro" />
-        <button className="header__button">
-          <Image
-            src="/assets/icons/add-icon.svg"
-            alt="Adicionar"
-            width={24}
-            height={24}
-          />
-          Adicionar
-        </button>
-        <button className="header__button">
-          <Image
-            src="/assets/icons/hearth-icon.svg"
-            alt="Favoritos"
-            width={24}
-            height={24}
-          />
-          Favoritos
-        </button>
+        <LinkWithIcon
+          iconSrc="/assets/icons/add-icon.svg"
+          label="Adicionar"
+          iconWidth={24}
+          iconHeight={24}
+        />
+        <LinkWithIcon
+          iconSrc="/assets/icons/hearth-icon.svg"
+          label="Favoritos"
+          iconWidth={24}
+          iconHeight={24}
+        />
         <div className="header__separator"></div>
         <section className="header__user-info">
           <Image
