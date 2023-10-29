@@ -1,0 +1,39 @@
+@import '../../styles/settings/colors';
+
+.text-field__input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 11px 15px;
+  color: $gray-300;
+  border-radius: 8px;
+
+  &::placeholder {
+    color: $gray-400;
+    line-height: 1.1em;
+  }
+}
+
+.text-field__wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  width: 100%;
+  max-width: 437px;
+  border-radius: 8px;
+}
+
+.text-field__label {
+  color: $gray-400;
+}
+
+.text-field__input-wrapper {
+  width: 100%;
+  padding: 1px 1px;
+  border-radius: 8px;
+  border: 1px solid $gray-500;
+
+  &.focus {
+    border-color: $primary-color;
+  }
+}
