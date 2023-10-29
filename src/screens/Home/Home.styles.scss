@@ -1,0 +1,243 @@
+@import '../../styles/settings/breakpoints';
+@import '../../styles/settings/colors';
+@import '../../styles/tools/mixins';
+
+@mixin section-title() {
+  font-size: 28px;
+  line-height: 33px;
+  color: $gray-300;
+}
+
+.home {
+  padding-top: 40px;
+}
+
+.tab-menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  column-gap: 20px;
+  border-bottom: 1px solid $gray-500;
+}
+
+.tab-menu__item {
+  position: relative;
+}
+
+.tab-menu__item__select-shape {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px 2px 0px 0px;
+  background: $primary-color;
+}
+
+.tab-menu__item__button {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  padding: 16px;
+  color: $gray-300;
+}
+
+.favorite-books {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  padding-top: 24px;
+  margin-bottom: 32px;
+}
+
+.favorite-books__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.favorite-books__head__title {
+  @include section-title();
+}
+
+.favorite-books__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  column-gap: 24px;
+}
+
+.favorite-books__list__item {
+  display: flex;
+  flex-direction: column;
+  width: 136px;
+}
+
+.favorite-books__list__item__cover {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  object-position: center center;
+  object-fit: cover;
+}
+
+.favorite-books__list__item__title {
+  font-size: 16px;
+  line-height: 18px;
+  color: $gray-300;
+  margin-bottom: 4px;
+
+  @include text-max-lines(2);
+}
+
+.favorite-books__list__item__author {
+  font-size: 14px;
+  line-height: 16px;
+  color: $gray-400;
+}
+
+.bottom-sections {
+  position: relative;
+}
+
+.bottom-sections__shape {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 32px 0px 0px 0px;
+  background: $secondary-color;
+  box-shadow: 0px 1px 1px 0px #0000000d;
+
+  @media (min-width: $lg) {
+    box-shadow: 0px 0px 8px 0px #0000001a;
+    width: 89.07%;
+  }
+}
+
+.favorite-artists {
+  position: relative;
+  z-index: 2;
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+
+.favorite-artists__title {
+  @include section-title();
+  margin-bottom: 24px;
+}
+
+.favorite-artists__list {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 24px;
+  width: 100%;
+}
+
+.favorite-artists__list__item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  column-gap: 14.5px;
+}
+
+.favorite-artists__list__item__picture {
+  border-radius: 8px;
+  object-position: center center;
+  object-fit: cover;
+}
+
+.favorite-artists__list__item__author-info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+
+.favorite-artists__list__item__author-info__title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  color: $gray-300;
+}
+
+.favorite-artists__list__item__author-info__books-count {
+  font-size: 14px;
+  line-height: 16px;
+  color: $gray-400;
+}
+
+.library {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 60px;
+}
+
+.library__title {
+  @include section-title();
+  margin-bottom: 24px;
+}
+
+.library__tab-menu {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  margin-bottom: 24px;
+}
+
+.library__tab-menu__item__button {
+  padding: 9px 16px;
+  border-radius: 20px;
+  background: none;
+  border: 1px solid $gray-500;
+  color: $gray-400;
+  font-size: 14px;
+  line-height: 20px;
+
+  &.active {
+    background: $primary-color;
+    border-color: $primary-color;
+    color: $secondary-color;
+  }
+}
+
+.library-books {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.library-books__book {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.library-books__book__cover {
+  border-radius: 10px;
+  object-position: center center;
+  object-fit: cover;
+}
+
+.library-books__book__info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+
+.library-books__book__info__title {
+  font-size: 16px;
+  line-height: 18px;
+  color: $gray-300;
+
+  @include text-max-lines(2);
+}
+
+.library-books__book__info__author {
+  font-size: 14px;
+  line-height: 16px;
+  color: $gray-400;
+}
