@@ -1,6 +1,9 @@
 'use client'
 
 import { ChangeEvent, HTMLInputTypeAttribute, useLayoutEffect } from 'react'
+import Image from 'next/image'
+
+import { IconProps } from '@/interfaces'
 
 import './TextField.styles.scss'
 
@@ -11,6 +14,7 @@ interface TextFieldProps {
   placeholder?: string
   value?: string | number
   className?: string
+  icon?: IconProps
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -23,6 +27,7 @@ export default function TextField({
   onChange,
   value,
   className = '',
+  icon,
   ...props
 }: TextFieldProps) {
   const handleLabel = () =>
@@ -31,6 +36,8 @@ export default function TextField({
         {label}
       </label>
     )
+
+  const handleIcon = () => icon && <Image {...icon} />
 
   useLayoutEffect(() => {
     const inputWrapper = document.getElementById(
@@ -65,6 +72,7 @@ export default function TextField({
           className="text-field__input"
           {...props}
         />
+        {handleIcon()}
       </div>
     </div>
   )

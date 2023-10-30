@@ -18,3 +18,8 @@
     line-height: 23px;
   }
 }
+
+@mixin resetSpacings() {
+  padding: 0;
+  margin: 0;
+}

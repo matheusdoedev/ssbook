@@ -1,5 +1,12 @@
+import type { Metadata } from 'next'
+
+import { Header } from '@/components'
 import { HomeScreen } from '@/screens'
 import { ssbooksService } from '@/services'
+
+export const metadata: Metadata = {
+  title: 'Pagina Inicial | SSBook'
+}
 
 async function fetchData() {
   const { data: getFavoriteBooksData } = await ssbooksService.getFavoriteBooks()
@@ -19,5 +26,10 @@ async function fetchData() {
 export default async function Home() {
   const data = await fetchData()
 
-  return <HomeScreen data={data} />
+  return (
+    <>
+      <Header />
+      <HomeScreen data={data} />
+    </>
+  )
 }

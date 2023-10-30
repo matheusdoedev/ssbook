@@ -18,7 +18,7 @@ export default async function HomeScreen({ data }: HomeScreenProps) {
   const { favoriteAuthors, favoriteBooks, libraryBooks } = data
 
   return (
-    <>
+    <div>
       <TabMenu options={INTRO_TAB_MENU_OPTIONS} className="intro-tab-menu" />
 
       <FavoriteBooks
@@ -33,6 +33,6 @@ export default async function HomeScreen({ data }: HomeScreenProps) {
 
         <Library libraryBooks={libraryBooks} />
       </div>
-    </>
+    </div>
   )
 }

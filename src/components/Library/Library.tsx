@@ -5,6 +5,7 @@ import { Book } from '@/interfaces'
 import { LIBRARY_TAB_MENU_OPTIONS } from '@/constants'
 
 import './Library.styles.scss'
+import Link from 'next/link'
 
 interface LibraryProps {
   libraryBooks: Book[]
@@ -15,21 +16,23 @@ export default function Library({ libraryBooks }: LibraryProps) {
     libraryBooks
       .filter((_, index) => index < 9)
       .map(({ id, name, author, cover }) => (
-        <article key={id} className="library-books__book">
-          <Image
-            src={cover}
-            alt={name}
-            width={68}
-            height={100}
-            className="library-books__book__cover"
-          />
-          <section className="library-books__book__info">
-            <h3 className="library-books__book__info__title">{name}</h3>
-            <span className="library-books__book__info__author">
-              {author.name}
-            </span>
-          </section>
-        </article>
+        <Link key={id} href={`/book-details/${id}`}>
+          <article className="library-books__book">
+            <Image
+              src={cover}
+              alt={name}
+              width={68}
+              height={100}
+              className="library-books__book__cover"
+            />
+            <section className="library-books__book__info">
+              <h3 className="library-books__book__info__title">{name}</h3>
+              <span className="library-books__book__info__author">
+                {author.name}
+              </span>
+            </section>
+          </article>
+        </Link>
       ))
 
   return (

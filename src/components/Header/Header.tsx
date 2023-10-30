@@ -1,23 +1,39 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Container, LinkWithIcon, Logo, TabMenu, TextField } from '@/components'
+import { INTRO_TAB_MENU_OPTIONS } from '@/constants'
+import { IconProps } from '@/interfaces'
 import { ssbooksService } from '@/services'
 
 import './Header.styles.scss'
-import { INTRO_TAB_MENU_OPTIONS } from '@/constants'
 
-export default async function Header() {
+const SEARCH_FIELD_ICON: IconProps = {
+  src: '/assets/icons/magnifying-glass.svg',
+  alt: 'Buscar',
+  width: 24,
+  height: 24
+}
+
+interface HeaderProps {
+  hideInMobile?: boolean
+}
+
+export default async function Header({ hideInMobile }: HeaderProps) {
   const { data } = await ssbooksService.getUserPicture()
 
   return (
-    <div data-testid="header" className="header">
-      <div className="header__shape"></div>
+    <div className={`header ${hideInMobile ? 'header--mobile' : ''}`}>
       <Container className="header__container">
-        <Logo />
+        <div className="header__shape"></div>
+        <Link href="/">
+          <Logo />
+        </Link>
         <TextField
           name="search"
           placeholder="Busque um livro"
           className="header__search-input"
+          icon={SEARCH_FIELD_ICON}
         />
         <LinkWithIcon
           iconSrc="/assets/icons/add-icon.svg"

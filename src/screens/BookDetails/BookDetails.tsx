@@ -3,6 +3,7 @@ import { Book } from '@/interfaces'
 import Image from 'next/image'
 
 import './BookDetails.styles.scss'
+import Link from 'next/link'
 
 interface BookDetailsScreenProps {
   bookDetails: Book
@@ -16,6 +17,37 @@ export default function BookDetailsScreen({
   return (
     <section className="book-details">
       <div className="book-details__shape"></div>
+
+      <div className="book-details__cover-mobile" style={{ background: cover }}>
+        <Image
+          src={cover}
+          alt={name}
+          width={296}
+          height={433}
+          className="book-details__cover-mobile__cover"
+        />
+
+        <header className="book-details__cover-mobile__header">
+          <Link href="/">
+            <Image
+              src="/assets/icons/back-icon.svg"
+              alt="Voltar"
+              width={16}
+              height={14}
+            />
+          </Link>
+
+          <button>
+            <Image
+              src="/assets/icons/burguer-icon.svg"
+              alt="Menu"
+              width={4}
+              height={16}
+            />
+          </button>
+        </header>
+      </div>
+
       <Container className="book-details__container">
         <aside className="book-details__aside">
           <Image

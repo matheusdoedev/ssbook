@@ -4,8 +4,8 @@
   width: 100%;
   border: none;
   outline: none;
-  padding: 11px 15px;
-  color: $gray-300;
+  padding: 0;
+  color: $gray-400;
   border-radius: 8px;
 
   &::placeholder {
@@ -19,7 +19,7 @@
   flex-direction: column;
   row-gap: 8px;
   width: 100%;
-  max-width: 437px;
+  max-width: 437.1px;
   border-radius: 8px;
 }
 
@@ -28,8 +28,13 @@
 }
 
 .text-field__input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   width: 100%;
-  padding: 1px 1px;
+  padding: 7px 8px 7px 16px;
+
   border-radius: 8px;
   border: 1px solid $gray-500;
 

@@ -4,7 +4,7 @@ import './Footer.styles.scss'
 
 export default function Footer() {
   return (
-    <>
+    <div>
       <footer className="footer">
         <Container className="footer-container">
           <Logo variant="white" />
@@ -43,6 +43,6 @@ export default function Footer() {
           label="Favoritos"
         />
       </footer>
-    </>
+    </div>
   )
 }

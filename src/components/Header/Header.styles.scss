@@ -3,6 +3,12 @@
 
 .header {
   position: relative;
+
+  &--mobile {
+    @media (max-width: $lg) {
+      display: none;
+    }
+  }
 }
 
 .header__container {
@@ -10,8 +16,8 @@
   justify-content: space-between;
   align-items: center;
   column-gap: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   position: relative;
   z-index: 2;
 
@@ -31,25 +37,22 @@
 }
 
 .header__shape {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  box-shadow: 0px 0px 8px 0px #0000001a;
-
-  height: 72px;
   border-radius: 0px 0px 32px 0px;
+  box-shadow: 0px 0px 8px 0px #0000001a;
   background: $secondary-color;
-  width: 92%;
 
-  @media (max-width: $xl) {
-    width: 97%;
-  }
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: -32px;
+  height: 72px;
+  width: 100vw;
 
   @media (max-width: $lg) {
-    height: 104px;
-    width: 100%;
     box-shadow: 0px 1px 1px 0px #0000000d;
+
+    right: 0;
+    height: 104px;
   }
 }
 
