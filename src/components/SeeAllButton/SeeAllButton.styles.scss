@@ -1,3 +1,4 @@
+@import '../../styles/settings/breakpoints';
 @import '../../styles/settings/colors';
 
 .see-all-button {
@@ -6,4 +7,9 @@
   line-height: 19px;
   text-align: center;
   color: $primary-color;
+
+  @media (max-width: $lg) {
+    font-size: 14px;
+    line-height: 16px;
+  }
 }

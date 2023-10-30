@@ -7,16 +7,18 @@ interface LinkWithIconProps {
   iconWidth: number
   iconHeight: number
   label: string
+  isActive?: boolean
 }
 
 export default function LinkWithIcon({
   label,
   iconHeight,
   iconSrc,
-  iconWidth
+  iconWidth,
+  isActive
 }: LinkWithIconProps) {
   return (
-    <button className="link-with-icon">
+    <button className={`link-with-icon ${isActive ? 'active' : ''}`}>
       <Image src={iconSrc} alt={label} width={iconWidth} height={iconHeight} />
       {label}
     </button>

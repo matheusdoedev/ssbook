@@ -1,0 +1,58 @@
+@import '../../styles/settings/breakpoints';
+@import '../../styles/settings/colors';
+@import '../../styles/tools/mixins';
+
+.favorite-authors {
+  position: relative;
+  z-index: 2;
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+
+.favorite-authors__title {
+  @include section-title();
+  margin-bottom: 24px;
+}
+
+.favorite-authors__list {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 24px;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.favorite-authors__list__item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 248px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  column-gap: 14.5px;
+}
+
+.favorite-authors__list__item__picture {
+  border-radius: 8px;
+  object-position: center center;
+  object-fit: cover;
+}
+
+.favorite-authors__list__item__author-info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+
+.favorite-authors__list__item__author-info__title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  color: $gray-300;
+}
+
+.favorite-authors__list__item__author-info__books-count {
+  font-size: 14px;
+  line-height: 16px;
+  color: $gray-400;
+}

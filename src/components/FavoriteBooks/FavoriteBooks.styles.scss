@@ -1,0 +1,56 @@
+@import '../../styles/settings/breakpoints';
+@import '../../styles/settings/colors';
+@import '../../styles/tools/mixins';
+
+.favorite-books {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.favorite-books__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.favorite-books__head__title {
+  @include section-title();
+}
+
+.favorite-books__list {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+  align-items: flex-start;
+  overflow-x: scroll;
+}
+
+.favorite-books__list__button {
+  display: flex;
+  flex-direction: column;
+  width: 136px;
+}
+
+.favorite-books__list__item__cover {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  object-position: center center;
+  object-fit: cover;
+}
+
+.favorite-books__list__item__title {
+  font-size: 16px;
+  line-height: 18px;
+  color: $gray-300;
+  margin-bottom: 4px;
+
+  @include text-max-lines(2);
+}
+
+.favorite-books__list__item__author {
+  font-size: 14px;
+  line-height: 16px;
+  color: $gray-400;
+}

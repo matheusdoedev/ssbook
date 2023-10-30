@@ -1,6 +1,20 @@
+@import './../settings/colors';
+@import './../settings/breakpoints';
+
 @mixin text-max-lines($amount) {
   display: -webkit-box;
   -webkit-line-clamp: $amount;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+@mixin section-title() {
+  font-size: 28px;
+  line-height: 33px;
+  color: $gray-300;
+
+  @media (max-width: $lg) {
+    font-size: 20px;
+    line-height: 23px;
+  }
 }

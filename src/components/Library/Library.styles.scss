@@ -1,0 +1,67 @@
+@import '../../styles/settings/breakpoints';
+@import '../../styles/settings/colors';
+@import '../../styles/tools/mixins';
+
+.library {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 60px;
+}
+
+.library__title {
+  @include section-title();
+  margin-bottom: 24px;
+}
+
+.library-books {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-start;
+  gap: 24px;
+
+  @media (max-width: $lg) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.library-books__book {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+
+  @media (max-width: $lg) {
+    column-gap: 10px;
+  }
+}
+
+.library-books__book__cover {
+  border-radius: 10px;
+  object-position: center center;
+  object-fit: cover;
+
+  @media (max-width: $lg) {
+    width: 48px;
+    height: 70px;
+  }
+}
+
+.library-books__book__info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+
+.library-books__book__info__title {
+  font-size: 16px;
+  line-height: 18px;
+  color: $gray-300;
+
+  @include text-max-lines(2);
+}
+
+.library-books__book__info__author {
+  font-size: 14px;
+  line-height: 16px;
+  color: $gray-400;
+}

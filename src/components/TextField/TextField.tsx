@@ -10,6 +10,7 @@ interface TextFieldProps {
   name: string
   placeholder?: string
   value?: string | number
+  className?: string
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -21,6 +22,7 @@ export default function TextField({
   label,
   onChange,
   value,
+  className = '',
   ...props
 }: TextFieldProps) {
   const handleLabel = () =>
@@ -49,7 +51,9 @@ export default function TextField({
   }, [])
 
   return (
-    <div data-testid="text-field" className="text-field__wrapper">
+    <div
+      data-testid="text-field"
+      className={`text-field__wrapper ${className}`}>
       {handleLabel()}
       <div id="inputWrapper" className="text-field__input-wrapper">
         <input
