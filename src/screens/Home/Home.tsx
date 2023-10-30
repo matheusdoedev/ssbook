@@ -27,8 +27,6 @@ export default async function HomeScreen({ data }: HomeScreenProps) {
       />
 
       <div className="bottom-sections">
-        <div className="bottom-sections__shape"></div>
-
         <FavoriteAuthors favoriteAuthors={favoriteAuthors} />
 
         <Library libraryBooks={libraryBooks} />

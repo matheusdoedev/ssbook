@@ -3,56 +3,101 @@
 @import '../../styles/tools/mixins';
 
 .favorite-authors {
-  position: relative;
-  z-index: 2;
   padding-top: 32px;
   padding-bottom: 40px;
+
+  &__container {
+    position: relative;
+  }
+
+  &__shape {
+    box-shadow: 0px 0px 8px 0px #0000001a;
+    border-radius: 32px 0px 0px 0px;
+    background: $secondary-color;
+
+    position: absolute;
+    z-index: -1;
+    top: -32px;
+    left: -32px;
+    width: 100vw;
+    height: 100vh;
+
+    @media (max-width: $lg) {
+      box-shadow: 0px 1px 1px 0px #0000000d;
+      left: 0;
+    }
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    &__title {
+      @include section-title();
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+    width: 100%;
+    overflow-x: scroll;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      width: 296px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      column-gap: 14.5px;
+
+      @media (max-width: $lg) {
+        width: 248px;
+      }
+
+      &__picture {
+        border-radius: 8px;
+        object-position: center center;
+        object-fit: cover;
+      }
+
+      &__author-info {
+        display: flex;
+        flex-direction: column;
+        row-gap: 6px;
+
+        &__title {
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 18px;
+          color: $gray-300;
+        }
+
+        &__books-count {
+          font-size: 14px;
+          line-height: 16px;
+          color: $gray-400;
+        }
+      }
+    }
+  }
 }
 
-.favorite-authors__title {
-  @include section-title();
-  margin-bottom: 24px;
-}
+@media (max-width: $lg) {
+  .favorite-authors {
+    &__shape {
+      box-shadow: 0px 1px 1px 0px #0000000d;
+      left: 0;
+    }
 
-.favorite-authors__list {
-  display: flex;
-  justify-content: space-between;
-  column-gap: 24px;
-  width: 100%;
-  overflow-x: scroll;
-}
-
-.favorite-authors__list__item {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  width: 290px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  column-gap: 14.5px;
-}
-
-.favorite-authors__list__item__picture {
-  border-radius: 8px;
-  object-position: center center;
-  object-fit: cover;
-}
-
-.favorite-authors__list__item__author-info {
-  display: flex;
-  flex-direction: column;
-  row-gap: 6px;
-}
-
-.favorite-authors__list__item__author-info__title {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 18px;
-  color: $gray-300;
-}
-
-.favorite-authors__list__item__author-info__books-count {
-  font-size: 14px;
-  line-height: 16px;
-  color: $gray-400;
+    &__list {
+      &__item {
+        width: 248px;
+      }
+    }
+  }
 }

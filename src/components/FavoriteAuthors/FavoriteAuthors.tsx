@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Container } from '@/components'
+import { Container, SeeAllButton } from '@/components'
 import { Author } from '@/interfaces'
 
 import './FavoriteAuthors.styles.scss'
@@ -37,8 +37,13 @@ export default function FavoriteAuthors({
 
   return (
     <section className="favorite-authors">
-      <Container>
-        <h2 className="favorite-authors__title">Artistas favoritos</h2>
+      <Container className="favorite-authors__container">
+        <div className="favorite-authors__shape"></div>
+
+        <div className="favorite-authors__head">
+          <h2 className="favorite-authors__head__title">Artistas favoritos</h2>
+          <SeeAllButton />
+        </div>
 
         <ul className="favorite-authors__list">{handleFavoriteAuthors()}</ul>
       </Container>
