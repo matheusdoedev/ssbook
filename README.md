@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SSBook
+
+## About
+
+- A app where the users can manage their books.
+
+- An progressive web app made in React.js with Next.js and TypeScript.
 
 ## Getting Started
 
-First, run the development server:
+### Running the project in production (with Docker)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+#### 1. Configure .env.production file
+
+```.env.production
+API_URL=PUT_URL_HERE
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### 2. Build image
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+docker build -t ssbook .
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### 3. Run container
 
-## Learn More
+```sh
+docker run -d -p 3000:3000 --name ssbook ssbook
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Running the project in production (without Docker)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### 1. Configure .env.production file
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```.env.production
+API_URL=PUT_URL_HERE
+```
 
-## Deploy on Vercel
+#### 2. Install dependencies
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```sh
+npm install
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### 3. Build
+
+```sh
+npm run build
+```
+
+#### 4. Start
+
+```sh
+npm start
+```
+
+### Running the project in development
+
+#### 1. Configure .env.production file
+
+```.env.production
+API_URL=PUT_URL_HERE
+```
+
+#### 2. Install dependencies
+
+```sh
+npm install
+```
+
+#### 3. Run
+
+```sh
+npm run dev
+```
+
+## Metrics & Benchmarks
+
+### Lighthouse
+
+#### Desktop
+
+![Lighthouse Desktop Screenshoot](./.docs/benchmarks/lighthouse-desktop.png)
+
+#### Mobile
+
+![Lighthouse Mobile Screenshoot](./.docs/benchmarks/lighthouse-mobile.png)
+
+## Technologies
+
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Next.js](https://nextjs.org/)
+- [SCSS](https://sass-lang.com/)
+- [Apollo Client](https://www.apollographql.com/docs/)
+- [GraphQL](https://graphql.org/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Docker](https://docs.docker.com/)
+- [Dockerfile](https://docs.docker.com/engine/reference/builder/)
+- [React Spinners](https://www.davidhu.io/react-spinners/)
