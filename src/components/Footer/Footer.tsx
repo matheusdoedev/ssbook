@@ -7,16 +7,31 @@ import './Footer.styles.scss'
 
 export default function Footer() {
   const handleMobileNavOptions = () =>
-    FOOTER_MOBILE_NAV_OPTIONS.map(({ src, width, height, label, isActive }) => (
-      <LinkWithIcon
-        key={label}
-        iconSrc={src}
-        iconWidth={width}
-        iconHeight={height}
-        label={label}
-        isActive={isActive}
-      />
-    ))
+    FOOTER_MOBILE_NAV_OPTIONS.map(({ src, width, height, label, isActive }) => {
+      if (isActive)
+        return (
+          <Link key={label} href="/" style={{ margin: '0 auto' }}>
+            <LinkWithIcon
+              iconSrc={src}
+              iconWidth={width}
+              iconHeight={height}
+              label={label}
+              isActive={isActive}
+            />
+          </Link>
+        )
+
+      return (
+        <LinkWithIcon
+          key={label}
+          iconSrc={src}
+          iconWidth={width}
+          iconHeight={height}
+          label={label}
+          isActive={isActive}
+        />
+      )
+    })
 
   return (
     <div>
