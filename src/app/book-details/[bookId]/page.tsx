@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-import { Header, Loader } from '@/components'
+import { Header } from '@/components'
 import { BookDetailsScreen } from '@/screens'
 import { ssbooksService } from '@/services'
 import { GenerateMetadataProps } from '@/interfaces'

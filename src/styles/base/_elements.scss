@@ -7,6 +7,7 @@
 body {
   @include resetSpacings();
   background: $gray-700;
+  min-height: 100vh;
 }
 
 h1,
