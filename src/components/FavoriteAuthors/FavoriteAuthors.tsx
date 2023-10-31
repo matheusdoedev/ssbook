@@ -16,7 +16,7 @@ export default function FavoriteAuthors({
 }: FavoriteAuthorsProps) {
   const handleFavoriteAuthors = () =>
     favoriteAuthors.map(({ id, name, booksCount, picture }) => (
-      <li key={id} className="favorite-authors__list__item">
+      <li key={id} className={`favorite-authors__list__item ${className}`}>
         <Image
           className="favorite-authors__list__item__picture"
           src={picture}

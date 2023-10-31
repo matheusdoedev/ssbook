@@ -1,11 +1,11 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Container, TabMenu } from '@/components'
-import { Book } from '@/interfaces'
 import { LIBRARY_TAB_MENU_OPTIONS } from '@/constants'
+import { Book } from '@/interfaces'
 
 import './Library.styles.scss'
-import Link from 'next/link'
 
 interface LibraryProps {
   libraryBooks: Book[]

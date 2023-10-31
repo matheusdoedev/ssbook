@@ -4,8 +4,10 @@
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
+}
 
-  @media (min-width: $lg) {
+@media (min-width: $lg) {
+  .container {
     padding: 0;
     max-width: 936px;
   }

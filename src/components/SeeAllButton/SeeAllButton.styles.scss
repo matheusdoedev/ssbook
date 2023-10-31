@@ -8,8 +8,10 @@
   text-align: center;
   color: $primary-color;
   margin-top: 8px;
+}
 
-  @media (max-width: $lg) {
+@media (max-width: $lg) {
+  .see-all-button {
     font-size: 14px;
     line-height: 16px;
   }

@@ -7,172 +7,185 @@
   min-height: 100vh;
   overflow: hidden;
 
-  @media (max-width: $lg) {
-    padding-top: 0;
-    padding-bottom: 120px;
-  }
-
   &__container {
     display: grid;
     align-items: start;
     grid-template-columns: 1fr 2fr;
     column-gap: 24px;
+  }
 
-    @media (max-width: $lg) {
+  &__cover-mobile {
+    position: relative;
+    display: none;
+
+    &__cover {
+      position: relative;
+      z-index: -2;
+      width: 100vw;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    &__header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 129px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 20px;
+      background: linear-gradient(
+        180deg,
+        #000000 0%,
+        rgba(0, 0, 0, 0.0001) 100%
+      );
+    }
+  }
+
+  &__aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 24px;
+
+    & button {
+      font-size: 18px;
+
+      line-height: 21px;
+    }
+
+    &__cover {
+      border-radius: 10px;
+      object-position: center center;
+      object-fit: cover;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+
+    &__title {
+      font-size: 34px;
+      line-height: 40px;
+      color: $gray-300;
+      margin-bottom: 12px;
+    }
+
+    &__author {
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 48px;
+      color: $gray-400;
+    }
+
+    &__abstract {
+      position: relative;
+      margin-bottom: 40px;
+
+      &__shape {
+        border-radius: 32px 0px 0px 0px;
+        background: $secondary-color;
+        box-shadow: 0px 0px 8px 0px #0000001a;
+
+        position: absolute;
+        z-index: -1;
+        top: -24px;
+        left: calc(-296px + -64px);
+        width: 100vw;
+        height: 150vh;
+      }
+
+      &__text {
+        font-size: 18px;
+        line-height: 23px;
+        color: $gray-300;
+        max-width: 100% !important;
+        margin-bottom: 0;
+      }
+    }
+
+    &__about-author {
+      &__title {
+        font-size: 28px;
+        line-height: 33px;
+        color: $gray-300;
+        margin-bottom: 8px;
+      }
+
+      &__text {
+        font-size: 18px;
+        line-height: 23px;
+        color: $gray-300;
+        max-width: 100% !important;
+      }
+    }
+  }
+}
+
+@media (max-width: $lg) {
+  .book-details {
+    padding-top: 0;
+    padding-bottom: 120px;
+
+    &__container {
       display: flex;
       flex-direction: column;
     }
-  }
-}
 
-.book-details__cover-mobile {
-  position: relative;
-  display: none;
-
-  @media (max-width: $lg) {
-    display: block;
-  }
-
-  &__cover {
-    position: relative;
-    z-index: -2;
-    width: 100vw;
-    object-fit: cover;
-    object-position: top center;
-  }
-
-  &__header {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 129px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.0001) 100%);
-  }
-}
-
-.book-details__aside {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 24px;
-
-  & button {
-    font-size: 18px;
-
-    line-height: 21px;
-  }
-
-  @media (max-width: $lg) {
-    display: none;
-  }
-}
-
-.book-details__aside__cover {
-  border-radius: 10px;
-  object-position: center center;
-  object-fit: cover;
-  margin-bottom: 8px;
-}
-
-.book-details__content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-
-  @media (max-width: $lg) {
-    margin-top: -144px;
-  }
-}
-
-.book-details__content__title {
-  font-size: 34px;
-  line-height: 40px;
-  color: $gray-300;
-  margin-bottom: 12px;
-
-  @media (max-width: $lg) {
-    font-size: 20px;
-    line-height: 23px;
-    margin-bottom: 8px;
-  }
-}
-
-.book-details__content__author {
-  font-size: 24px;
-  line-height: 28px;
-  margin-bottom: 48px;
-  color: $gray-400;
-
-  @media (max-width: $lg) {
-    font-size: 14px;
-    line-height: 16px;
-    margin-bottom: 20px;
-  }
-}
-
-.book-details__content__abstract {
-  position: relative;
-
-  &__shape {
-    border-radius: 32px 0px 0px 0px;
-    background: $secondary-color;
-    box-shadow: 0px 0px 8px 0px #0000001a;
-
-    position: absolute;
-    z-index: -1;
-    top: -24px;
-    left: calc(-296px + -64px);
-    width: 100vw;
-    height: 150vh;
-
-    @media (max-width: $lg) {
-      left: -20px;
-      top: -96px;
-      box-shadow: 0px 1px 1px 0px #0000000d;
+    &__cover-mobile {
+      display: block;
     }
-  }
 
-  &__text {
-    font-size: 18px;
-    line-height: 23px;
-    color: $gray-300;
-    max-width: 100% !important;
-    margin-bottom: 40px;
-
-    @media (max-width: $lg) {
-      font-size: 16px;
-      line-height: 23px;
-      margin-bottom: 32px;
+    &__aside {
+      display: none;
     }
-  }
-}
 
-.book-details__content__about-author__title {
-  font-size: 28px;
-  line-height: 33px;
-  color: $gray-300;
-  margin-bottom: 8px;
+    &__content {
+      margin-top: -144px;
 
-  @media (max-width: $lg) {
-    font-size: 18px;
-    line-height: 21px;
-  }
-}
+      &__title {
+        font-size: 20px;
+        line-height: 23px;
+        margin-bottom: 8px;
+      }
 
-.book-details__content__about-author__text {
-  font-size: 18px;
-  line-height: 23px;
-  color: $gray-300;
-  max-width: 100% !important;
+      &__author {
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 20px;
+      }
 
-  @media (max-width: $lg) {
-    font-size: 16px;
-    line-height: 23px;
+      &__abstract {
+        &__shape {
+          left: -20px;
+          top: -96px;
+          box-shadow: 0px 1px 1px 0px #0000000d;
+        }
+
+        &__text {
+          font-size: 16px;
+          line-height: 23px;
+          margin-bottom: 32px;
+        }
+      }
+
+      &__about-author {
+        &__title {
+          font-size: 18px;
+          line-height: 21px;
+        }
+
+        &__text {
+          font-size: 16px;
+          line-height: 23px;
+        }
+      }
+    }
   }
 }

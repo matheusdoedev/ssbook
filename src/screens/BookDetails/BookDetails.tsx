@@ -15,9 +15,13 @@ export default function BookDetailsScreen({
 }: BookDetailsScreenProps) {
   const { cover, name, author, description } = bookDetails
 
+  const bookAbstract = {
+    __html: description.replace(/\n/g, '<br />')
+  }
+
   return (
     <section className="book-details">
-      <div className="book-details__cover-mobile" style={{ background: cover }}>
+      <div className="book-details__cover-mobile">
         <Image
           src={cover}
           alt={name}
@@ -83,9 +87,7 @@ export default function BookDetailsScreen({
             <div className="book-details__content__abstract__shape"></div>
             <p
               className="book-details__content__abstract__text"
-              dangerouslySetInnerHTML={{
-                __html: description.replace(/\n/g, '<br />')
-              }}></p>
+              dangerouslySetInnerHTML={bookAbstract}></p>
           </div>
 
           <section>

@@ -15,8 +15,10 @@
   &:hover {
     cursor: pointer;
   }
+}
 
-  @media (max-width: $lg) {
+@media (max-width: $lg) {
+  .link-with-icon {
     font-size: 10px;
     font-weight: 500;
     line-height: 12px;

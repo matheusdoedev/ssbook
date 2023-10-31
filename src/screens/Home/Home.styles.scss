@@ -4,21 +4,23 @@
 
 .intro-tab-menu {
   padding-top: 24px;
-
-  @media (max-width: $lg) {
-    display: none !important;
-  }
 }
 
 .home-favorite-books {
   padding-top: 24px;
   margin-bottom: 32px;
-
-  @media (max-width: $lg) {
-    padding-top: 32px;
-  }
 }
 
 .bottom-sections {
   overflow: hidden;
+}
+
+@media (max-width: $lg) {
+  .intro-tab-menu {
+    display: none !important;
+  }
+
+  .home-favorite-books {
+    padding-top: 32px;
+  }
 }

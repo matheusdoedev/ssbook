@@ -1,4 +1,4 @@
 export * from './common'
-export * from './responses'
+export * from './dto'
 export * from './ssbooksApi'
 export * from './tabMenu'

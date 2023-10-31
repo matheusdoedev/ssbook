@@ -1,14 +1,27 @@
 import Link from 'next/link'
 
 import { Container, LinkWithIcon, Logo } from '@/components'
+import { FOOTER_MOBILE_NAV_OPTIONS } from '@/constants'
 
 import './Footer.styles.scss'
 
 export default function Footer() {
+  const handleMobileNavOptions = () =>
+    FOOTER_MOBILE_NAV_OPTIONS.map(({ src, width, height, label, isActive }) => (
+      <LinkWithIcon
+        key={label}
+        iconSrc={src}
+        iconWidth={width}
+        iconHeight={height}
+        label={label}
+        isActive={isActive}
+      />
+    ))
+
   return (
     <div>
       <footer className="footer">
-        <Container className="footer-container">
+        <Container className="footer__container">
           <Link href="/">
             <Logo variant="white" />
           </Link>
@@ -20,33 +33,7 @@ export default function Footer() {
         </Container>
       </footer>
 
-      <footer className="footer--mobile">
-        <LinkWithIcon
-          iconSrc="/assets/icons/home-icon.svg"
-          iconWidth={24}
-          iconHeight={24}
-          label="Início"
-          isActive
-        />
-        <LinkWithIcon
-          iconSrc="/assets/icons/add-icon.svg"
-          iconWidth={24}
-          iconHeight={24}
-          label="Adicionar"
-        />
-        <LinkWithIcon
-          iconSrc="/assets/icons/share-icon.svg"
-          iconWidth={24}
-          iconHeight={24}
-          label="Buscar"
-        />
-        <LinkWithIcon
-          iconSrc="/assets/icons/hearth-icon.svg"
-          iconWidth={24}
-          iconHeight={24}
-          label="Favoritos"
-        />
-      </footer>
+      <footer className="footer--mobile">{handleMobileNavOptions()}</footer>
     </div>
   )
 }
