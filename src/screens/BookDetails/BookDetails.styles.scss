@@ -23,7 +23,7 @@
       z-index: -2;
       width: 100vw;
       object-fit: cover;
-      object-position: top center;
+      object-position: center center;
     }
 
     &__header {
@@ -171,7 +171,6 @@
         &__text {
           font-size: 16px;
           line-height: 23px;
-          margin-bottom: 32px;
         }
       }
 
