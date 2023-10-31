@@ -14,19 +14,14 @@ interface LoaderProps {
   color?: string
 }
 
-export default function Loader({
-  loading = false,
-  color = '#A076F2'
-}: LoaderProps) {
+export default function Loader({ loading, color = '#A076F2' }: LoaderProps) {
   return (
-    <div data-testid="loader">
-      <BarLoader
-        color={color}
-        loading={loading}
-        cssOverride={override}
-        width={200}
-        //   size={150}
-      />
-    </div>
+    <BarLoader
+      data-testid="loader"
+      color={color}
+      loading={!!loading}
+      cssOverride={override}
+      width={200}
+    />
   )
 }
