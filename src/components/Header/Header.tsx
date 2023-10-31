@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { Container, LinkWithIcon, Logo, TabMenu, TextField } from '@/components'
 import { INTRO_TAB_MENU_OPTIONS } from '@/constants'
 import { IconProps } from '@/interfaces'
-import { ssbooksService } from '@/services'
 
 import './Header.styles.scss'
 
@@ -17,13 +16,14 @@ const SEARCH_FIELD_ICON: IconProps = {
 
 interface HeaderProps {
   hideInMobile?: boolean
+  userPicture: string
 }
 
-export default async function Header({ hideInMobile }: HeaderProps) {
-  const { data } = await ssbooksService.getUserPicture()
-
+export default function Header({ hideInMobile, userPicture }: HeaderProps) {
   return (
-    <div className={`header ${hideInMobile ? 'header--mobile' : ''}`}>
+    <div
+      data-testid="header"
+      className={`header ${hideInMobile ? 'header--mobile' : ''}`}>
       <Container className="header__container">
         <div className="header__shape"></div>
         <Link href="/">
@@ -51,7 +51,7 @@ export default async function Header({ hideInMobile }: HeaderProps) {
         <section className="header__user-info">
           <Image
             className="header__user-info__avatar"
-            src={data.userPicture}
+            src={userPicture}
             alt="Favoritos"
             width={20}
             height={18.35}

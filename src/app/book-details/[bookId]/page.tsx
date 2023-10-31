@@ -14,9 +14,14 @@ interface BookDetailsPageProps {
 }
 
 async function fetchData(bookId: string) {
-  const data = await ssbooksService.getBookDetails(bookId)
+  const getBookDetailsData = await ssbooksService.getBookDetails(bookId)
 
-  return data.data.book
+  const { data: getUserPictureData } = await ssbooksService.getUserPicture()
+
+  return {
+    book: getBookDetailsData.data.book,
+    userPicture: getUserPictureData.userPicture
+  }
 }
 
 export async function generateMetadata({
@@ -24,21 +29,21 @@ export async function generateMetadata({
 }: GenerateMetadataProps<BookDetailsPageParams>): Promise<Metadata> {
   const bookId = params.bookId
 
-  const data = await fetchData(bookId)
+  const { book } = await fetchData(bookId)
 
   return {
-    title: `${data.name} | SSBook`,
-    description: data.description
+    title: `${book.name} | SSBook`,
+    description: book.description
   }
 }
 
 export default async function BookDetails({ params }: BookDetailsPageProps) {
-  const bookDetails = await fetchData(params.bookId)
+  const { book, userPicture } = await fetchData(params.bookId)
 
   return (
     <>
-      <Header hideInMobile />
-      <BookDetailsScreen bookDetails={bookDetails} />
+      <Header userPicture={userPicture} hideInMobile />
+      <BookDetailsScreen bookDetails={book} />
     </>
   )
 }

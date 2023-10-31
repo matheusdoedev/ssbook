@@ -36,7 +36,7 @@ export default function FavoriteAuthors({
     ))
 
   return (
-    <section className="favorite-authors">
+    <section data-testid="favorite-authors" className="favorite-authors">
       <Container className="favorite-authors__container">
         <div className="favorite-authors__shape"></div>
 

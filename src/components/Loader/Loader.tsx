@@ -19,12 +19,14 @@ export default function Loader({
   color = '#A076F2'
 }: LoaderProps) {
   return (
-    <BarLoader
-      color={color}
-      loading={loading}
-      cssOverride={override}
-      width={200}
-      //   size={150}
-    />
+    <div data-testid="loader">
+      <BarLoader
+        color={color}
+        loading={loading}
+        cssOverride={override}
+        width={200}
+        //   size={150}
+      />
+    </div>
   )
 }

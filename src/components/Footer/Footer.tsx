@@ -34,7 +34,7 @@ export default function Footer() {
     })
 
   return (
-    <div>
+    <div data-testid="footer">
       <footer className="footer">
         <Container className="footer__container">
           <Link href="/">

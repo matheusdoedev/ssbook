@@ -36,7 +36,7 @@ export default function Library({ libraryBooks }: LibraryProps) {
       ))
 
   return (
-    <section className="library">
+    <section data-testid="library" className="library">
       <Container>
         <h2 className="library__title">Biblioteca</h2>
       </Container>

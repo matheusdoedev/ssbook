@@ -1,4 +1,5 @@
 export * from './common'
 export * from './dto'
+export * from './home'
 export * from './ssbooksApi'
 export * from './tabMenu'

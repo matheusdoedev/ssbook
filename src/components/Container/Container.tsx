@@ -11,5 +11,5 @@ export default function Container({
   children,
   className = ''
 }: ContainerProps) {
-  return <div className={`container ${className}`}>{children}</div>
+  return <div data-testid="container" className={`container ${className}`}>{children}</div>
 }

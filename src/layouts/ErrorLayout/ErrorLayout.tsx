@@ -6,12 +6,16 @@ import './ErrorLayout.styles.scss'
 
 interface ErrorLayoutProps {
   message: string
+  userPicture: string
 }
 
-export default function ErrorLayout({ message }: ErrorLayoutProps) {
+export default function ErrorLayout({
+  message,
+  userPicture
+}: ErrorLayoutProps) {
   return (
     <>
-      <Header hideInMobile />
+      <Header userPicture={userPicture} hideInMobile />
 
       <section className="error-layout">
         <Container className="error-layout__container">

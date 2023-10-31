@@ -12,5 +12,13 @@ interface LogoProps {
 export default function Logo({ variant = 'default' }: LogoProps) {
   const logoImg = LOGO_VARIANTS[variant]
 
-  return <Image src={logoImg} alt="SSBook" width={76.9} height={23.76} />
+  return (
+    <Image
+      data-testid="logo"
+      src={logoImg}
+      alt="SSBook"
+      width={76.9}
+      height={23.76}
+    />
+  )
 }

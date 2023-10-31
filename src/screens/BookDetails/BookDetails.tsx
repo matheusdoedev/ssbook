@@ -20,7 +20,7 @@ export default function BookDetailsScreen({
   }
 
   return (
-    <section className="book-details">
+    <section data-testid="book-details" className="book-details">
       <div className="book-details__cover-mobile">
         <Image
           src={cover}

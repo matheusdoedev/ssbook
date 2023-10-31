@@ -39,7 +39,9 @@ export default function FavoriteBooks({
       ))
 
   return (
-    <section className={`favorite-books ${className}`}>
+    <section
+      data-testid="favorite-books"
+      className={`favorite-books ${className}`}>
       <Container>
         <section className="favorite-books__head">
           <h2 className="favorite-books__head__title">Livros favoritos</h2>

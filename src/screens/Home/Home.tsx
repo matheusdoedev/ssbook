@@ -1,24 +1,18 @@
 import { FavoriteAuthors, FavoriteBooks, Library, TabMenu } from '@/components'
 import { INTRO_TAB_MENU_OPTIONS } from '@/constants'
-import { Author, Book } from '@/interfaces'
+import { HomeScreenData } from '@/interfaces'
 
 import './Home.styles.scss'
-
-interface HomeScreenData {
-  favoriteBooks: Book[]
-  libraryBooks: Book[]
-  favoriteAuthors: Author[]
-}
 
 interface HomeScreenProps {
   data: HomeScreenData
 }
 
-export default async function HomeScreen({ data }: HomeScreenProps) {
+export default function HomeScreen({ data }: HomeScreenProps) {
   const { favoriteAuthors, favoriteBooks, libraryBooks } = data
 
   return (
-    <div>
+    <div data-testid="home">
       <TabMenu options={INTRO_TAB_MENU_OPTIONS} className="intro-tab-menu" />
 
       <FavoriteBooks

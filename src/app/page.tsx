@@ -16,10 +16,13 @@ async function fetchData() {
 
   const { data: getLibraryBooksData } = await ssbooksService.getLibraryBooks()
 
+  const { data: getUserPictureData } = await ssbooksService.getUserPicture()
+
   return {
     favoriteBooks: getFavoriteBooksData.favoriteBooks,
     libraryBooks: getLibraryBooksData.allBooks,
-    favoriteAuthors: getFavoriteAuthorsData.favoriteAuthors
+    favoriteAuthors: getFavoriteAuthorsData.favoriteAuthors,
+    userPicture: getUserPictureData.userPicture
   }
 }
 
@@ -28,7 +31,7 @@ export default async function Home() {
 
   return (
     <>
-      <Header />
+      <Header userPicture={data.userPicture} />
       <HomeScreen data={data} />
     </>
   )

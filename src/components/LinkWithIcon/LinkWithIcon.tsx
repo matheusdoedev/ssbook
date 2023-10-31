@@ -18,7 +18,9 @@ export default function LinkWithIcon({
   isActive
 }: LinkWithIconProps) {
   return (
-    <button className={`link-with-icon ${isActive ? 'active' : ''}`}>
+    <button
+      data-testid="link-with-icon"
+      className={`link-with-icon ${isActive ? 'active' : ''}`}>
       <Image src={iconSrc} alt={label} width={iconWidth} height={iconHeight} />
       {label}
     </button>

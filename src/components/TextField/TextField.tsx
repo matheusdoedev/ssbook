@@ -62,8 +62,12 @@ export default function TextField({
       data-testid="text-field"
       className={`text-field__wrapper ${className}`}>
       {handleLabel()}
-      <div id="inputWrapper" className="text-field__input-wrapper">
+      <div
+        data-testid="text-field-wrapper"
+        id="inputWrapper"
+        className="text-field__input-wrapper">
         <input
+          data-testid="input"
           type={type}
           id={name}
           name={name}

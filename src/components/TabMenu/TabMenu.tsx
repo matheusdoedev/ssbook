@@ -24,7 +24,7 @@ export default function TabMenu({
     ))
 
   return (
-    <section className={`tab-menu ${className}`}>
+    <section data-testid="tab-menu" className={`tab-menu ${className}`}>
       <Container>
         <ul className={`tab-menu__list ${variant}`}>
           {handleTabMenuOptions()}
