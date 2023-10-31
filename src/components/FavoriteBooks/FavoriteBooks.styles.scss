@@ -23,7 +23,6 @@
     justify-content: space-between;
     column-gap: 20px;
     align-items: flex-start;
-    overflow-x: scroll;
 
     &__button {
       display: flex;
@@ -53,6 +52,14 @@
         line-height: 16px;
         color: $gray-400;
       }
+    }
+  }
+}
+
+@media (max-width: $lg) {
+  .favorite-books {
+    &__list {
+      overflow-x: scroll;
     }
   }
 }

@@ -18,7 +18,6 @@
   &.outline-buttons {
     column-gap: 8px;
     margin-bottom: 24px;
-    overflow-x: scroll;
   }
 }
 
@@ -66,6 +65,10 @@
   .tab-menu__list {
     &.default {
       border-bottom: none;
+    }
+
+    &.outline-buttons {
+      overflow-x: scroll;
     }
   }
 }

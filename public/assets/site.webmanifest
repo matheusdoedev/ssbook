@@ -1,0 +1,36 @@
+{
+  "name": "SSBook",
+  "short_name": "SSBook",
+  "icons": [
+    {
+      "src": "./android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#A076F2",
+  "background_color": "#f7f7f7",
+  "display": "standalone",
+  "start_url": "/",
+  "screenshots": [
+    {
+      "src": "./desktop-screenshot.png",
+      "sizes": "1260x926",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop"
+    },
+    {
+      "src": "./mobile-screenshot.png",
+      "sizes": "956x1684",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile"
+    }
+  ]
+}
