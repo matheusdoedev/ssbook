@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { Container, LinkWithIcon, Logo } from '@/components'
 
 import './Footer.styles.scss'
@@ -7,7 +9,9 @@ export default function Footer() {
     <div>
       <footer className="footer">
         <Container className="footer-container">
-          <Logo variant="white" />
+          <Link href="/">
+            <Logo variant="white" />
+          </Link>
           <p className="footer__copy">
             Todos os direitos reservados.
             <br />

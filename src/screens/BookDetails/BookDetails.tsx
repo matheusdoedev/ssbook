@@ -1,9 +1,10 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
 import { Container, LinkWithIcon } from '@/components'
 import { Book } from '@/interfaces'
-import Image from 'next/image'
 
 import './BookDetails.styles.scss'
-import Link from 'next/link'
 
 interface BookDetailsScreenProps {
   bookDetails: Book
@@ -16,8 +17,6 @@ export default function BookDetailsScreen({
 
   return (
     <section className="book-details">
-      <div className="book-details__shape"></div>
-
       <div className="book-details__cover-mobile" style={{ background: cover }}>
         <Image
           src={cover}
@@ -80,11 +79,14 @@ export default function BookDetailsScreen({
         <section className="book-details__content">
           <h2 className="book-details__content__title">{name}</h2>
           <span className="book-details__content__author">{author.name}</span>
-          <p
-            className="book-details__content__abstract"
-            dangerouslySetInnerHTML={{
-              __html: description.replace(/\n/g, '<br />')
-            }}></p>
+          <div className="book-details__content__abstract">
+            <div className="book-details__content__abstract__shape"></div>
+            <p
+              className="book-details__content__abstract__text"
+              dangerouslySetInnerHTML={{
+                __html: description.replace(/\n/g, '<br />')
+              }}></p>
+          </div>
 
           <section>
             <h3 className="book-details__content__about-author__title">

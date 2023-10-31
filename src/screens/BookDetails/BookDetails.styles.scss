@@ -5,31 +5,22 @@
   padding-top: 24px;
   padding-bottom: 60px;
   min-height: 100vh;
-  position: relative;
+  overflow: hidden;
 
   @media (max-width: $lg) {
     padding-top: 0;
+    padding-bottom: 120px;
   }
 
-  &__shape {
-    position: absolute;
-    z-index: -1;
-    top: 124px;
-    right: 0;
-    width: 92%;
-    height: 95%;
-    border-radius: 32px 0px 0px 0px;
-    background: $secondary-color;
-    box-shadow: 0px 0px 8px 0px #0000001a;
-
-    @media (max-width: $xl) {
-      width: 97%;
-    }
+  &__container {
+    display: grid;
+    align-items: start;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 24px;
 
     @media (max-width: $lg) {
-      top: 261px;
-      width: 100%;
-      box-shadow: 0px 1px 1px 0px #0000000d;
+      display: flex;
+      flex-direction: column;
     }
   }
 }
@@ -64,23 +55,17 @@
   }
 }
 
-.book-details__container {
-  display: grid;
-  align-items: start;
-  grid-template-columns: 1fr 2fr;
-  column-gap: 24px;
-
-  @media (max-width: $lg) {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
 .book-details__aside {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   row-gap: 24px;
+
+  & button {
+    font-size: 18px;
+
+    line-height: 21px;
+  }
 
   @media (max-width: $lg) {
     display: none;
@@ -132,16 +117,39 @@
 }
 
 .book-details__content__abstract {
-  font-size: 18px;
-  line-height: 23px;
-  color: $gray-300;
-  max-width: 100% !important;
-  margin-bottom: 40px;
+  position: relative;
 
-  @media (max-width: $lg) {
-    font-size: 16px;
+  &__shape {
+    border-radius: 32px 0px 0px 0px;
+    background: $secondary-color;
+    box-shadow: 0px 0px 8px 0px #0000001a;
+
+    position: absolute;
+    z-index: -1;
+    top: -24px;
+    left: calc(-296px + -64px);
+    width: 100vw;
+    height: 150vh;
+
+    @media (max-width: $lg) {
+      left: -20px;
+      top: -96px;
+      box-shadow: 0px 1px 1px 0px #0000000d;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
     line-height: 23px;
-    margin-bottom: 32px;
+    color: $gray-300;
+    max-width: 100% !important;
+    margin-bottom: 40px;
+
+    @media (max-width: $lg) {
+      font-size: 16px;
+      line-height: 23px;
+      margin-bottom: 32px;
+    }
   }
 }
 
