@@ -17,7 +17,7 @@ export default function ErrorLayout({
     <>
       <Header userPicture={userPicture} hideInMobile />
 
-      <section className="error-layout">
+      <section data-testid="error-layout" className="error-layout">
         <Container className="error-layout__container">
           <h2 className="error-layout__title">{message}</h2>
           <Link className="error-layout__link" href="/">
