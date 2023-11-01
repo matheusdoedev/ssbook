@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 
 import { Header } from '@/components'
+import { GenerateMetadataProps } from '@/interfaces'
 import { BookDetailsScreen } from '@/screens'
 import { ssbooksService } from '@/services'
-import { GenerateMetadataProps } from '@/interfaces'
 
 interface BookDetailsPageParams {
   bookId: string

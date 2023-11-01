@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Container, LinkWithIcon } from '@/components'
+import { Container, LinkWithIcon, Loader } from '@/components'
 import { Book } from '@/interfaces'
 
 import './BookDetails.styles.scss'
@@ -27,6 +27,7 @@ export default function BookDetailsScreen({
           alt={name}
           width={296}
           height={433}
+          priority
           className="book-details__cover-mobile__cover"
         />
 
@@ -59,6 +60,7 @@ export default function BookDetailsScreen({
             width={296}
             height={433}
             className="book-details__aside__cover"
+            priority
           />
           <LinkWithIcon
             iconSrc="/assets/icons/hearth-icon.svg"
@@ -81,6 +83,7 @@ export default function BookDetailsScreen({
         </aside>
 
         <section className="book-details__content">
+          <div className="book-details__content__abstract__shape--mobile"></div>
           <h2 className="book-details__content__title">{name}</h2>
           <span className="book-details__content__author">{author.name}</span>
           <div className="book-details__content__abstract">

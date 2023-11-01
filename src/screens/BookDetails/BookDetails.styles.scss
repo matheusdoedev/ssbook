@@ -1,5 +1,6 @@
 @import '../../styles/settings/breakpoints';
 @import '../../styles/settings/colors';
+@import '../../styles/tools/mixins';
 
 .book-details {
   padding-top: 24px;
@@ -73,8 +74,8 @@
     &__title {
       font-size: 34px;
       line-height: 40px;
-      color: $gray-300;
       margin-bottom: 12px;
+      color: $gray-300;
     }
 
     &__author {
@@ -88,7 +89,8 @@
       position: relative;
       margin-bottom: 40px;
 
-      &__shape {
+      &__shape,
+      &__shape--mobile {
         border-radius: 32px 0px 0px 0px;
         background: $secondary-color;
         box-shadow: 0px 0px 8px 0px #0000001a;
@@ -98,7 +100,11 @@
         top: -24px;
         left: calc(-296px + -64px);
         width: 100vw;
-        height: 150vh;
+        height: 1000vh;
+      }
+
+      &__shape--mobile {
+        display: none;
       }
 
       &__text {
@@ -163,8 +169,13 @@
 
       &__abstract {
         &__shape {
+          display: none;
+        }
+
+        &__shape--mobile {
+          display: block !important;
           left: -20px;
-          top: -96px;
+          top: -32px;
           box-shadow: 0px 1px 1px 0px #0000000d;
         }
 

@@ -1,8 +1,9 @@
 'use client'
 
+import { useEffect } from 'react'
+
 import { ErrorLayout } from '@/layouts'
 import { ssbooksService } from '@/services'
-import { useEffect } from 'react'
 
 interface ErrorProps {
   error: Error & { digest?: string }

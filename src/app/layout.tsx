@@ -19,13 +19,7 @@ export const metadata: Metadata = {
       url: '/assets/apple-touch-icon.png'
     }
   ],
-  manifest: '/assets/site.webmanifest',
-  openGraph: {
-    type: 'website',
-    description: 'É um app onde o usuário pode gerenciar os próprios livros.',
-    title: 'SSBook',
-    locale: 'pt-br'
-  }
+  manifest: '/assets/site.webmanifest'
 }
 
 export default function RootLayout({
