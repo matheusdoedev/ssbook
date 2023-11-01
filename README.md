@@ -86,6 +86,10 @@ npm run dev
 
 ![Lighthouse Mobile Screenshoot](./.docs/benchmarks/lighthouse-mobile.png)
 
+#### Test Coverage
+
+![Last Test Coverage Update](./.docs/benchmarks/test-coverage.png)
+
 ## Technologies
 
 - [React](https://react.dev/)
