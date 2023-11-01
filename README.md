@@ -74,6 +74,20 @@ npm install
 npm run dev
 ```
 
+### Testing the application
+
+#### 1. Install dependencies
+
+```sh
+npm install
+```
+
+#### 2. Run
+
+```sh
+npm run test
+```
+
 ## Metrics & Benchmarks
 
 ### Lighthouse
